@@ -1,8 +1,7 @@
 FROM python:3.8-alpine
 
-ARG alpine/cfn-lint
-ARG alpine/cfn-lint:latest
-RUN pip install cfn-lint
+ARG version=v0.44.2
+RUN pip install cfn-lint=${version}
 RUN pip install pydot
 
 ENTRYPOINT ["cfn-lint"]
