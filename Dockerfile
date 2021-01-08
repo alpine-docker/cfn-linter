@@ -1,5 +1,7 @@
 FROM python:3.8-alpine
 
+RUN apt-get install jq
+RUN apt-get install curl
 RUN repo="aws-cloudformation/cfn-python-lint"
 RUN output=$(curl -sl https://api.github.com/repos/${repo}/tags |jq -r '.[].name'|sort --reverse|head -10)
 RUN echo $output
