@@ -1,15 +1,6 @@
 FROM python:3.8-alpine
 
-RUN apt-get install jq
-RUN apt-get install curl
-RUN repo="aws-cloudformation/cfn-python-lint"
-RUN output=$(curl -sl https://api.github.com/repos/${repo}/tags |jq -r '.[].name'|sort --reverse|head -10)
-RUN echo $output
-
-RUN for x in $output;
-RUN do echo $x;
-RUN done;
-
+RUN /Users/eddiezhang/DevOps/cfn-linter/.top1.sh
 ARG version=$x
 RUN echo 'version is' ${version}
 RUN pip install cfn-lint==${version}
