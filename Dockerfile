@@ -3,9 +3,10 @@ FROM python:3.8-alpine
 COPY top10.sh /top10.sh
 RUN apk add --no-cache --upgrade bash
 
-RUN apt-get update
-RUN apt-get install jq
-RUN apt-get install curl
+RUN apk update
+RUN apk add --no-cache  jq
+RUN apk add --no-cache  curl
+
 RUN ./top10.sh
 RUN chmod +x /top10.sh
 #RUN echo 'version is' ${version}
