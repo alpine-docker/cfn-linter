@@ -5,5 +5,6 @@ output=$(curl -sl https://api.github.com/repos/${repo}/tags |jq -r '.[].name'|so
 
 for x in $output;
 do echo $x;
+echo 'version is '$x
 done;
 

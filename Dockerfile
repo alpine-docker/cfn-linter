@@ -1,17 +1,9 @@
 FROM python:3.8-alpine
 
-COPY top10.sh /top10.sh
-RUN apk add --no-cache --upgrade bash
+ARG version=0.44.2
+ENV top10_versions $top10_versions
 
-RUN apk update
-RUN apk add --no-cache  jq
-RUN apk add --no-cache  curl
+RUN pip install cfn-lint==${top10_version}
 
-RUN ./top10.sh
-RUN chmod +x /top10.sh
-#RUN echo 'version is' ${version}
-RUN pip install cfn-lint==${version}
-RUN pip install pydot
-
-#ENTRYPOINT ["cfn-lint"]
-#CMD ["--help"]
+ENTRYPOINT ["bin/sh"]
+CMD ["/top10.sh", "arg1"]
