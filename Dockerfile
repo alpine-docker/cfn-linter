@@ -1,9 +1,10 @@
 FROM python:3.8-alpine
 
-COPY top1.sh /top1.sh
-RUN ./top1.sh
-ARG version=$x
-RUN echo 'version is' ${version}
+COPY top10.sh /top10.sh
+RUN apk add --no-cache --upgrade bash
+RUN ./top10.sh
+RUN chmod +x /top10.sh
+#RUN echo 'version is' ${version}
 RUN pip install cfn-lint==${version}
 RUN pip install pydot
 
