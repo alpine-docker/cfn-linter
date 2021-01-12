@@ -7,8 +7,7 @@ image='eddieorg/cfn-lint'
 for version in $output;
 do
   echo 'version is' $version
-  docker build --build-arg version=${version} -t ${image}:${version}
-  docker push eddieorg/cfn-lint:${image}:{version}
-#echo 'version is '$x
+  docker build --build-arg version=${version} -t ${image}:${version} .
+  docker push ${image}:${version}
 done;
 
