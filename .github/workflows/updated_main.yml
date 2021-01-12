@@ -32,6 +32,8 @@ jobs:
               file: ./Dockerfile
               push: true
               tags: eddieorg/cfn-lint:0.44.2
+          - name: Build docker images and push
+            run: ./find_latest.sh
 
           - name: Image digest
             run: echo ${{ steps.docker_build.outputs.digest }}
