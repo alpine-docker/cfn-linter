@@ -28,14 +28,14 @@ jobs:
           - name: Build docker images and push
             run: ./find_latest.sh
           
-          - name: Tag latest
-            id: docker_build
-            uses: docker/build-push-action@v2
-            with:
-              context: ./
-              #file: ./Dockerfile
-              push: push
-              tags: eddieorg/cfn-lint:latest
+#           - name: Tag latest
+#             id: docker_build
+#             uses: docker/build-push-action@v2
+#             with:
+#               context: ./
+#               #file: ./Dockerfile
+#               push: push
+#               tags: eddieorg/cfn-lint:latest
           
 #           - name: Validate YAML file
 #             run: docker run --rm -v `pwd`:/data eddieorg/cfn-lint:latest /data/vpc.yaml
