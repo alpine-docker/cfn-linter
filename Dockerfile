@@ -4,4 +4,3 @@ ARG version=v0.44.2
 
 RUN pip install cfn-lint==$version
 
-RUN chmod +x vpc.yaml
