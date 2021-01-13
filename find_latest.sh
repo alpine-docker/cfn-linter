@@ -14,6 +14,7 @@ fi
 if [[ ${status} == *${output}* ]]; then
    docker build --build-arg version=${output} -t ${image}:${output} .
    docker push ${image}:${output}
+   docker tag ${image}:${output} ${image}:latest
 fi
 #docker build --build-arg version=${output} -t ${image}:${output} .
 #docker push ${image}:${output}
