@@ -4,3 +4,4 @@ ARG version
 
 RUN pip install cfn-lint==$version
 
+RUN docker tag cfn/lint:$version cfn/lint:latest
