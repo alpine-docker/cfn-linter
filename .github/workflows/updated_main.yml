@@ -35,8 +35,8 @@ jobs:
           - name: Build docker images and push
             run: ./find_latest.sh
           
-          - name: Validate YAML file
-            run: docker run --rm -v `pwd`:/data eddieorg/cfn-lint:latest /data/vpc.yaml
+#           - name: Validate YAML file
+#             run: docker run --rm -v `pwd`:/data eddieorg/cfn-lint:latest /data/vpc.yaml
           
           - name: Image digest
             run: echo ${{ steps.docker_build.outputs.digest }}
