@@ -7,11 +7,11 @@ image='eddieorg/cfn-lint'
 status=$(curl -sL https://hub.docker.com/v2/repositories/${image}/tags/${tags})
 #echo $status
 
-if [[ ${status} == *${output}* ]]; then
+if [[ ${status} != *${output}* ]]; then
   echo 'Tag exists'
 fi
 
-if [[ ${status} != *${output}* ]]; then
+if [[ ${status} == *${output}* ]]; then
    docker build --build-arg version=${output} -t ${image}:${output} .
    docker tag ${image}:${output} ${image}:latest
    docker push ${image}:${output}
