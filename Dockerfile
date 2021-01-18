@@ -5,4 +5,6 @@ RUN pip install cfn-lint==$version
 RUN pip install pydot
 
 ENTRYPOINT ["cfn-lint"]
-CMD ["--help"]
+#ENTRYPOINT ["echo","Hello"]
+#CMD ["--help"]
+CMD ["Eddie"]
