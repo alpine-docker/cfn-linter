@@ -7,4 +7,4 @@ RUN pip install pydot
 ENTRYPOINT ["cfn-lint"]
 #ENTRYPOINT ["echo","Hello"]
 #CMD ["--help"]
-CMD ["Eddie"]
+CMD ["--help"]
