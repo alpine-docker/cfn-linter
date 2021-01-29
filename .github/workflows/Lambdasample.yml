@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@eddiez0719-patch-1
+    - uses: actions/checkout@master
     - name: Deploy code to Lambda
       uses: alpine-docker/cfn-linter@v1.0
       with:
