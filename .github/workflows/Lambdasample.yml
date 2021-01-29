@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Zip dist folder contents
-      run: pwd && zip bundle.zip .
+      run: pwd && ls && zip bundle.zip *
     - name: Deploy code to Lambda
       uses: alpine-docker/cfn-linter@eddiez0719-patch-1  
       with:
