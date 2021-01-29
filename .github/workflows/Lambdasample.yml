@@ -1,7 +1,8 @@
 name: deploy-py-lambda
 on:
   push:
-    branches: [gitbranch]
+    branches: 
+      - eddiez0719-patch-1
 
 jobs:
   build:
