@@ -1,10 +1,5 @@
-FROM python:3.8-alpine
+FROM appleboy/drone-lambda:1.2.3-linux-amd64
 
-ARG version=v0.44.3
-RUN pip install cfn-lint==$version
-RUN pip install pydot
-
-ENTRYPOINT ["cfn-lint"]
-#ENTRYPOINT ["echo","Hello"]
-#CMD ["--help"]
-CMD ["--help"]
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
