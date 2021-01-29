@@ -13,7 +13,7 @@ jobs:
       with:
         lambda_layer_arn: 'arn:aws:lambda:ap-southeast-2:640656035841:layer:my-layer'
         lambda_function_name: 'my-function'
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        AWS_DEFAULT_REGION: 'ap-southeast-2'
-        zipfile: example.zip
+        aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws_region: 'ap-southeast-2'
+        zip_file: example.zip
