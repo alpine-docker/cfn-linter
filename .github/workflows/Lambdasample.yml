@@ -9,12 +9,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Zip dist folder contents
-      run: zip -qq -r -j ./bundle.zip ./dist/*
+      run: pwd
+     #run: zip bundle.zip .
     - name: Deploy code to Lambda
       uses: alpine-docker/cfn-linter@eddiez0719-patch-1  
       with:
         function_name: 'my-function'
         aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws_secret_access_k:ey: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws_region: 'ap-southeast-2'
         zip_file: bundle.zip
