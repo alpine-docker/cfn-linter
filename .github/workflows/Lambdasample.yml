@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Deploy code to Lambda
-      uses: alpine-docker/cfn-linter@v1.0
+      uses: mariamrf/py-lambda-action@v1.0.0
       with:
         lambda_layer_arn: 'arn:aws:lambda:ap-southeast-2:640656035841:layer:my-layer'
         lambda_function_name: 'my-function'
