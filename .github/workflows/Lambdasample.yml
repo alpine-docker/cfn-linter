@@ -11,8 +11,7 @@ jobs:
     - name: Deploy code to Lambda
       uses: alpine-docker/cfn-linter@eddiez0719-patch-1
       with:
-        lambda_layer_arn: 'arn:aws:lambda:ap-southeast-2:640656035841:layer:my-layer'
-        lambda_function_name: 'my-function'
+        function_name: 'my-function'
         aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws_region: 'ap-southeast-2'
