@@ -11,7 +11,7 @@ jobs:
     - name: Zip dist folder contents
       run: pwd && ls && zip bundle.zip *
     - name: Upload zip file to lambda function test
-      uses: ./.
+      uses: alpine-docker/cfn-linter@eddiez0719-patch-1
       with:
         function_name: 'test'
         aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
