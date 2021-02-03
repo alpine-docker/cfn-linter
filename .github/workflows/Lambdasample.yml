@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: My first step
-      uses: ./.github/alpine-docker/cfn-linter/action
+      uses: ./.
     - name: Zip dist folder contents
       run: pwd && ls && zip bundle.zip *
     - name: Deploy code to Lambda
