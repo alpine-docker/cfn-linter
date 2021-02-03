@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: My first step
+      uses: ./.github/actions/action 
     - name: Zip dist folder contents
       run: pwd && ls && zip bundle.zip *
     - name: Deploy code to Lambda
